@@ -1,5 +1,5 @@
 {
-  "requiredSdkVersion": "~0.0.91",
+  "requiredSdkVersion": "^0.1.9",
   "version": "0.0.1",
   "name": "BbbPluginReactionStack",
   "javascriptEntrypointUrl": "BbbPluginReactionStack.js"

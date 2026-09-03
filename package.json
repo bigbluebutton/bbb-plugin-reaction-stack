@@ -6,7 +6,7 @@
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.17.7",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "bigbluebutton-html-plugin-sdk": "^0.0.91",
+    "bigbluebutton-html-plugin-sdk": "^0.1.26",
     "motion": "^12.23.24",
     "path": "^0.12.7",
     "radash": "^12.1.1",
