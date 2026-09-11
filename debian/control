@@ -2,7 +2,7 @@ Source: bbb-plugin-reaction-stack
 Section: web
 Priority: extra
 Maintainer: João Victor <joaov@imdt.com.br>
-Build-Depends: debhelper (>= 13), nodejs (>= 18)
+Build-Depends: debhelper (>= 13), nodejs (>= 22)
 Standards-Version: 4.1.4
 Homepage: https://github.com/bigbluebutton/bbb-plugin-reaction-stack
 
