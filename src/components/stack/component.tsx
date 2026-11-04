@@ -22,6 +22,10 @@ function ReactionStack({
       backgroundColor: 'transparent',
       boxShadow: 'none',
       contentFunction(element) {
+        // Let clicks pass through the transparent parts of the window;
+        // the reaction pills themselves re-enable pointer events.
+        const container = element;
+        container.style.pointerEvents = 'none';
         const root = ReactDOM.createRoot(element);
         root.render(
           <ReactionWindow pluginApi={pluginApi} />,
