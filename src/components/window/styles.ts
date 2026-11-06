@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { motion } from 'motion/react';
 
 /*
@@ -25,13 +25,6 @@ const darkTokens = `
   --rs-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 10px rgba(0, 0, 0, 0.35);
   --rs-tint: 30%;
   --rs-tint-fallback: rgba(255, 255, 255, 0.08);
-`;
-
-// Fades the pill out over the last moments before the reaction expires.
-const fadeOut = keyframes`
-  to {
-    opacity: 0;
-  }
 `;
 
 export const ReactionList = styled.ul<{ $dark: boolean }>`
@@ -63,7 +56,8 @@ const pill = `
   display: flex;
   align-items: center;
   box-sizing: border-box;
-  border-radius: 1.7rem;
+  /* Themes can override the shape, e.g. :root { --reaction-stack-radius: 0.5rem; } */
+  border-radius: var(--reaction-stack-radius, 1.7rem);
   overflow: hidden;
   background-color: var(--rs-surface);
   border: 1px solid var(--rs-border);
@@ -79,12 +73,6 @@ export const ReactionItem = styled(motion.li)`
   /* Each pill hugs its name; very long names are capped and ellipsized. */
   max-width: 16rem;
   padding: 0 1rem 0 0.25rem;
-  animation: ${fadeOut} var(--rs-fade-duration, 0ms) ease-in var(--rs-fade-delay, 0ms) forwards;
-
-  @media (prefers-reduced-motion: reduce) {
-    animation: none;
-  }
-
   @media (max-width: 768px) {
     height: 2rem;
     max-width: 12rem;
@@ -100,7 +88,7 @@ export const Emoji = styled.span`
   place-items: center;
   width: 2rem;
   height: 2rem;
-  border-radius: 50%;
+  border-radius: var(--reaction-stack-emoji-radius, 50%);
   background: var(--rs-tint-fallback);
   background: color-mix(in srgb, var(--rs-user, transparent) var(--rs-tint), transparent);
   font-size: 1.25rem;
